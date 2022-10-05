@@ -104,7 +104,11 @@ class FeatureFlagsViewController: UITableViewController {
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             viewModel.deleteFeature(at: indexPath)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if viewModel.numberOfSections() < tableView.numberOfSections {
+                tableView.deleteSections([indexPath.section], with: .fade)
+            } else {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
     
@@ -193,9 +197,13 @@ private extension FeatureFlagsViewController {
             self.tableView.reloadData()
             return
         }
-        FeatureFlags.refresh {
-            self.tableView.reloadData()
-            self.refreshControl?.endRefreshing()
+        DispatchQueue.global().async { [self] in
+            FeatureFlags.refresh {
+                DispatchQueue.main.async { [self] in
+                    self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
+                }
+            }
         }
     }
     

@@ -8,7 +8,11 @@
 
 import FeatureFlags
 
-extension Feature.Name {
+extension Feature.Name: CaseIterable {
+    public static var allCases: [FeatureName] {
+        return [.exampleFeatureFlag, .exampleUnlockFlag, .exampleMVTTest, .exampleABTest, .exampleFeatureOnOffTest]
+    }
+    
     static let exampleFeatureFlag = Feature.Name(rawValue: "Example Feature Flag")
     static let exampleUnlockFlag = Feature.Name(rawValue: "Example Unlock Flag")
     static let exampleABTest = Feature.Name(rawValue: "Example A/B Test")

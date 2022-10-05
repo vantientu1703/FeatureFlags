@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1250"
+   LastUpgradeVersion = "1320"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -55,7 +55,7 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "34BF0360254156C7ADB28487D91829C2"
+            BlueprintIdentifier = "956D0CCE540F9D718DE792F7682ED0CE"
             BuildableName = "FeatureFlags.framework"
             BlueprintName = "FeatureFlags"
             ReferencedContainer = "container:Pods/Pods.xcodeproj">
