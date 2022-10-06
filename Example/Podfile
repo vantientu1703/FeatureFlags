@@ -1,8 +1,8 @@
 use_frameworks!
 
 target 'FeatureFlags_Example' do
-  pod 'FeatureFlags', :path => '../'
-
+  #pod 'FeatureFlags', :path => '../'
+  pod 'FeatureFlags', :path => 'git@github.com:vantientu1703/FeatureFlags.git'
   target 'FeatureFlags_Tests' do
     inherit! :search_paths
 
