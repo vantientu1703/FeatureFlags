@@ -1,5 +1,5 @@
 PODS:
-  - FeatureFlags (0.1.0)
+  - FeatureFlags (2.6.3)
 
 DEPENDENCIES:
   - FeatureFlags (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FeatureFlags: a722e78684be789b760d2439272d450453f3d49f
+  FeatureFlags: fd3867d4a8e15a5dec38eac35686a9afba6e4f12
 
 PODFILE CHECKSUM: 23c33b3059c2404051c249e1e4f21393161e421e
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.11.3

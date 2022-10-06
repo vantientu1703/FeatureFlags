@@ -11,6 +11,8 @@
 		132DE3E321B8044E00BC1D23 /* Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13365346217DD3C700E41564 /* Features.swift */; };
 		133653182178E86700E41564 /* Features.json in Resources */ = {isa = PBXBuildFile; fileRef = 133653172178E85F00E41564 /* Features.json */; };
 		13365347217DD3C700E41564 /* Features.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13365346217DD3C700E41564 /* Features.swift */; };
+		56F318DE28ED7C4D003E9500 /* FeatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F318DC28ED7C4D003E9500 /* FeatureTableViewCell.swift */; };
+		56F318DF28ED7C4D003E9500 /* FeatureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56F318DD28ED7C4D003E9500 /* FeatureTableViewCell.xib */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -39,6 +41,8 @@
 		13CD3F3E0F3B8E60C614936C /* FeatureFlags.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FeatureFlags.podspec; path = ../FeatureFlags.podspec; sourceTree = "<group>"; };
 		217DEE2E1F4018A93B499868 /* Pods_FeatureFlags_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FeatureFlags_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54924E0C57E29ACFE49AB01C /* Pods-FeatureFlags_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FeatureFlags_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FeatureFlags_Example/Pods-FeatureFlags_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		56F318DC28ED7C4D003E9500 /* FeatureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureTableViewCell.swift; sourceTree = "<group>"; };
+		56F318DD28ED7C4D003E9500 /* FeatureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeatureTableViewCell.xib; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* FeatureFlags_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FeatureFlags_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 				13365346217DD3C700E41564 /* Features.swift */,
+				56F318DC28ED7C4D003E9500 /* FeatureTableViewCell.swift */,
+				56F318DD28ED7C4D003E9500 /* FeatureTableViewCell.xib */,
 			);
 			name = "Example for FeatureFlags";
 			path = FeatureFlags;
@@ -218,15 +224,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 333FQ3S5VA;
 						LastSwiftMigration = 1020;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 333FQ3S5VA;
 						LastSwiftMigration = 1020;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -258,6 +266,7 @@
 			files = (
 				133653182178E86700E41564 /* Features.json in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				56F318DF28ED7C4D003E9500 /* FeatureTableViewCell.xib in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -333,7 +342,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FeatureFlags_Example/Pods-FeatureFlags_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-FeatureFlags_Example/Pods-FeatureFlags_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FeatureFlags/FeatureFlags.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -342,7 +351,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FeatureFlags_Example/Pods-FeatureFlags_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FeatureFlags_Example/Pods-FeatureFlags_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -352,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F318DE28ED7C4D003E9500 /* FeatureTableViewCell.swift in Sources */,
 				13365347217DD3C700E41564 /* Features.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
@@ -447,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -497,7 +507,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -510,10 +520,12 @@
 			baseConfigurationReference = 54924E0C57E29ACFE49AB01C /* Pods-FeatureFlags_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 333FQ3S5VA;
 				INFOPLIST_FILE = FeatureFlags/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rwbutler.demo.FeatureFlags-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rwbutler.demo.FeatureFlags-Example.tuu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -525,10 +537,12 @@
 			baseConfigurationReference = 0C5EB5D9EDF130DB7E936583 /* Pods-FeatureFlags_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 333FQ3S5VA;
 				INFOPLIST_FILE = FeatureFlags/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.rwbutler.demo.FeatureFlags-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rwbutler.demo.FeatureFlags-Example.tuu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -539,6 +553,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B7860BC82608F584A8E11953 /* Pods-FeatureFlags_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 333FQ3S5VA;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -556,6 +571,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAFDED9BAB20624197C89CEF /* Pods-FeatureFlags_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 333FQ3S5VA;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";

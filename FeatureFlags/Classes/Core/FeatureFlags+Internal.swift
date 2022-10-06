@@ -52,10 +52,16 @@ extension FeatureFlags {
     }
     
     static func loadConfiguration() -> [Feature]? {
-        var remoteData: Data?
-        if let configurationURL = configurationURL {
-            remoteData = try? Data(contentsOf: configurationURL)
+        let queue = DispatchQueue(label: "download-features-josn")
+        queue.async {
+            if let configurationURL = configurationURL {
+                if let remoteData = try? Data(contentsOf: configurationURL) {
+                    CachedFeatureData.storeFeature(data: remoteData)
+                    configuration = loadConfigurationWithData(remoteData)
+                }
+            }
         }
+        let remoteData = CachedFeatureData.retriveFeature()
         return loadConfigurationWithData(remoteData)
     }
     

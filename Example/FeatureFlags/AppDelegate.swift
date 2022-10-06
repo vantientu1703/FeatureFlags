@@ -11,58 +11,34 @@ import FeatureFlags
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
-        launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        FeatureFlags.deleteAllFeaturesFromCache()
-        let navigationController = UINavigationController()
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
-        let navigationSettings = ViewControllerNavigationSettings(
-            autoClose: true,
-            closeButtonAlignment: .closeButtonLeftActionButtonRight,
-            closeButton: .done,
-            isNavigationBarHidden: false)
-        FeatureFlagsUI.autoRefresh = true
-        FeatureFlagsUI.pushFeatureFlags(navigationController: navigationController,
-                                      navigationSettings: navigationSettings)
-        printInformation()
+                     launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        //FeatureFlags.deleteAllFeaturesFromCache()
+        let localUrl = Bundle.main.url(forResource: "Features", withExtension: "json")
+        let remoteUrl = URL(string: "https://raw.githubusercontent.com/rwbutler/FeatureFlags/master/Example/FeatureFlags/Features.json")
+        FeatureFlags.configurationURL = remoteUrl
+        FeatureFlags.localFallbackConfigurationURL = localUrl
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        self.window?.makeKeyAndVisible()
+        self.window?.rootViewController = vc
+        
         return true
     }
-
-    /// For testing.
-    private func loadStoryboardViewController(navigationController: UINavigationController) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "Main")
-        navigationController.pushViewController(viewController, animated: true)
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-    }
-
 }
 
 private extension AppDelegate {
-
+    
     func printInformation() {
         FeatureFlags.printFeatureFlags()
         print("\n")
         FeatureFlags.printExtendedFeatureFlagInformation()
     }
-
 }

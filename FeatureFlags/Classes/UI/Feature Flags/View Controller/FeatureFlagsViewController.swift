@@ -104,7 +104,11 @@ class FeatureFlagsViewController: UITableViewController {
                             forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             viewModel.deleteFeature(at: indexPath)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if viewModel.numberOfSections() < tableView.numberOfSections {
+                tableView.deleteSections([indexPath.section], with: .fade)
+            } else {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
     }
     
