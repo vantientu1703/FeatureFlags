@@ -7,7 +7,7 @@
         {
             "name": "Example Development Flag",
             "description": "Example of a feature under development",
-            "development": true,
+            "development": false,
             "enabled": false,
             "section": "Remote Config"
         },
