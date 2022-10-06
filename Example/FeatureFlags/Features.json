@@ -2,7 +2,7 @@
     "features": [
         {
             "name": "Example Feature Flag",
-            "enabled": true
+            "enabled": false
         },
         {
             "name": "Example Development Flag",
