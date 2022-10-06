@@ -1,16 +1,21 @@
 PODS:
-  - FeatureFlags (2.6.3)
+  - FeatureFlags (2.6.6)
 
 DEPENDENCIES:
-  - FeatureFlags (from `../`)
+  - FeatureFlags (from `https://github.com/vantientu1703/FeatureFlags.git`)
 
 EXTERNAL SOURCES:
   FeatureFlags:
-    :path: "../"
+    :git: https://github.com/vantientu1703/FeatureFlags.git
+
+CHECKOUT OPTIONS:
+  FeatureFlags:
+    :commit: 31c0df4d565cafe46e0c5a272b1b8755718e5668
+    :git: https://github.com/vantientu1703/FeatureFlags.git
 
 SPEC CHECKSUMS:
-  FeatureFlags: fd3867d4a8e15a5dec38eac35686a9afba6e4f12
+  FeatureFlags: 79b0759a30e9db38fc2d140735e566e7c3a4d325
 
-PODFILE CHECKSUM: 23c33b3059c2404051c249e1e4f21393161e421e
+PODFILE CHECKSUM: 1fd45ee3dd6ce6360fcaa76d5dc0142006645de8
 
 COCOAPODS: 1.11.3
