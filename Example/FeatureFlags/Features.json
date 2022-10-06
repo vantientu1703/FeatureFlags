@@ -4,15 +4,6 @@
             "name": "Example Feature Flag",
             "enabled": false
         },
-        /*
-        {
-            "name": "Example Development Flag",
-            "description": "Example of a feature under development",
-            "development": false,
-            "enabled": false,
-            "section": "Remote Config"
-        },
-        */
         {
             "name": "Example Unlock Flag",
             "description": "Example of an unlockable feature",
