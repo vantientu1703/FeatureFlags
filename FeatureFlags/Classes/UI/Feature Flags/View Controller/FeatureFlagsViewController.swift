@@ -197,13 +197,9 @@ private extension FeatureFlagsViewController {
             self.tableView.reloadData()
             return
         }
-        DispatchQueue.global().async { [self] in
-            FeatureFlags.refresh {
-                DispatchQueue.main.async { [self] in
-                    self.tableView.reloadData()
-                    self.refreshControl?.endRefreshing()
-                }
-            }
+        FeatureFlags.refresh {
+            self.tableView.reloadData()
+            self.refreshControl?.endRefreshing()
         }
     }
     
